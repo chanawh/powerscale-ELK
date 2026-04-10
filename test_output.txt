@@ -1,0 +1,44 @@
+==========================================
+Elasticsearch & Kibana Local Stack
+Test Script
+==========================================
+
+1. Checking Elasticsearch container...
+[0;32m✓ Elasticsearch container is running[0m
+
+2. Checking Elasticsearch cluster health...
+   Cluster status: green
+[0;32m✓ Elasticsearch cluster is healthy (status: green)[0m
+
+3. Checking Kibana container...
+[0;32m✓ Kibana container is running[0m
+
+4. Checking Kibana accessibility...
+[0;32m✓ Kibana is accessible at http://localhost:5601[0m
+
+5. Checking Python dependencies...
+[0;32m✓ Elasticsearch Python client is installed[0m
+
+6. Testing data ingestion...
+Connecting to Elasticsearch...
+Error: Could not connect to Elasticsearch.
+Make sure SSH tunnel is active in Git Bash:
+ssh -p 50019 -L 9200:localhost:9200 root@10.241.80.184
+[0;32m✓ Data ingestion test passed[0m
+
+7. Verifying data in Elasticsearch...
+scripts/test.sh: line 132: [: : integer expression expected
+[0;31m✗ No documents found in powerscale-logs index[0m
+
+8. Testing search functionality...
+scripts/test.sh: line 144: [: : integer expression expected
+[0;31m✗ Search functionality test failed[0m
+
+==========================================
+Test Summary
+==========================================
+[0;32mTests Passed: 6[0m
+[0;31mTests Failed: 2[0m
+Total Tests: 8
+
+[0;31m✗ Some tests failed. Please review the errors above.[0m

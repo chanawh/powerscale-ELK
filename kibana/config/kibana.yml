@@ -1,0 +1,16 @@
+server.name: "kibana"
+server.host: "0.0.0.0"
+server.port: 5601
+
+# Connect to local Elasticsearch container (same Podman network)
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+elasticsearch.requestTimeout: 90000
+
+# Security settings (disabled for development)
+xpack.security.enabled: false
+xpack.encryptedSavedObjects.encryptionKey: "powerscale-kibana-encryption-key-32chars"
+xpack.reporting.encryptionKey: "powerscale-reporting-encryption-key-32chars"
+xpack.security.encryptionKey: "powerscale-security-encryption-key-32chars"
+
+# Monitoring
+monitoring.ui.container.elasticsearch.enabled: true
